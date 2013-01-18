@@ -39,9 +39,7 @@ namespace ManipulasiGambar
             Graphics g = e.Graphics;
             g.DrawImage(EditGambar.CurrentBitmap, new Rectangle(this.AutoScrollPosition.X, this.AutoScrollPosition.Y, Convert.ToInt32(EditGambar.CurrentBitmap.Width * zoomFactor), Convert.ToInt32(EditGambar.CurrentBitmap.Height * zoomFactor)));
         }
-        /// <summary>
-        /// Open Gambar
-        /// </summary>
+
         private void menuItemOpen_Click(object sender, EventArgs e)
         {
             if (DialogResult.OK == oDlg.ShowDialog())
@@ -56,9 +54,7 @@ namespace ManipulasiGambar
                 imgInfo.Show();
             }
         }
-        /// <summary>
-        /// Save Gambar
-        /// </summary>
+
         private void menuItemSave_Click(object sender, EventArgs e)
         {
             if (DialogResult.OK == sDlg.ShowDialog())
@@ -66,42 +62,32 @@ namespace ManipulasiGambar
                 EditGambar.SaveBitmap(sDlg.FileName);
             }
         }
-        /// <summary>
-        /// Close Program
-        /// </summary>
+
         private void menuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        /// <summary>
-        /// Undo Gambar
-        /// </summary>
+
         private void menuItemUndo_Click(object sender, EventArgs e)
         {
             EditGambar.ResetBitmap();
             this.AutoScrollMinSize = new Size(Convert.ToInt32(EditGambar.CurrentBitmap.Width * zoomFactor), Convert.ToInt32(EditGambar.CurrentBitmap.Height * zoomFactor));
             this.Invalidate();
         }
-        /// <summary>
-        /// Clear Gambar
-        /// </summary>
+
         private void menuItemClearImage_Click(object sender, EventArgs e)
         {
             EditGambar.RestorePrevious();
             EditGambar.ClearImage();
             this.Invalidate();
         }
-        /// <summary>
-        /// Info Gambar
-        /// </summary>
+
         private void menuItemImageInfo_Click(object sender, EventArgs e)
         {
             InfoGambar imgInfo = new InfoGambar(EditGambar);
             imgInfo.Show();
         }
-        /// <summary>
-        /// Zoom Gambar
-        /// </summary>
+
         private void menuItemZoom50_Click(object sender, EventArgs e)
         {
             zoomFactor = 0.5;
@@ -173,9 +159,7 @@ namespace ManipulasiGambar
             this.AutoScrollMinSize = new Size(Convert.ToInt32(EditGambar.CurrentBitmap.Width * zoomFactor), Convert.ToInt32(EditGambar.CurrentBitmap.Height * zoomFactor));
             this.Invalidate();
         }
-        /// <summary>
-        /// Filter Gambar Warna Merah
-        /// </summary>
+
         private void menuItemFilterRed_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -185,9 +169,7 @@ namespace ManipulasiGambar
             this.Cursor = Cursors.Default;
 
         }
-        /// <summary>
-        /// Filter Gambar Warna Hijau
-        /// </summary>
+
         private void menuItemFilterGreen_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -197,9 +179,7 @@ namespace ManipulasiGambar
             this.Cursor = Cursors.Default;
 
         }
-        /// <summary>
-        /// Filter Gambar Warna Biru
-        /// </summary>
+
         private void menuItemFilterBlue_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -208,9 +188,7 @@ namespace ManipulasiGambar
             this.Invalidate();
             this.Cursor = Cursors.Default;
         }
-        /// <summary>
-        /// Efek Gamma
-        /// </summary>
+
         private void menuItemGamma_Click(object sender, EventArgs e)
         {
             FormGamma gFrm = new FormGamma();
@@ -224,9 +202,7 @@ namespace ManipulasiGambar
                 this.Cursor = Cursors.Default;
             }
         }
-        /// <summary>
-        /// Efek Brightness
-        /// </summary>
+
         private void menuItemBrightness_Click(object sender, EventArgs e)
         {
             FormBrightness bFrm = new FormBrightness();
@@ -240,9 +216,7 @@ namespace ManipulasiGambar
                 this.Cursor = Cursors.Default;
             }
         }
-        /// <summary>
-        /// Efek Contrast
-        /// </summary>
+
         private void menuItemContrast_Click(object sender, EventArgs e)
         {
             FormContrast cFrm = new FormContrast();
@@ -256,9 +230,7 @@ namespace ManipulasiGambar
                 this.Cursor = Cursors.Default;
             }
         }
-        /// <summary>
-        /// Efek Graycale
-        /// </summary>
+
         private void menuItemGrayscale_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -268,9 +240,7 @@ namespace ManipulasiGambar
             this.Cursor = Cursors.Default;
 
         }
-        /// <summary>
-        /// Efek Invert
-        /// </summary>
+
         private void menuItemInvert_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -279,9 +249,7 @@ namespace ManipulasiGambar
             this.Invalidate();
             this.Cursor = Cursors.Default;
         }
-        /// <summary>
-        /// Edit Ukuran Gambar
-        /// </summary>
+
         private void menuItemResize_Click(object sender, EventArgs e)
         {
             InsertTextForm1 rFrm = new InsertTextForm1();
@@ -297,9 +265,7 @@ namespace ManipulasiGambar
                 this.Cursor = Cursors.Default;
             }
         }
-        /// <summary>
-        /// Edit Rotasi Gambar
-        /// </summary>
+
         private void menuItemRotate90_Click(object sender, EventArgs e)
         {
             EditGambar.RotateFlip(RotateFlipType.Rotate90FlipNone);
@@ -326,9 +292,7 @@ namespace ManipulasiGambar
             this.Invalidate();
 
         }
-        /// <summary>
-        /// Edit Flip Gambar
-        /// </summary>
+
         private void menuItemFlipH_Click(object sender, EventArgs e)
         {
             EditGambar.RotateFlip(RotateFlipType.RotateNoneFlipX);
@@ -345,9 +309,7 @@ namespace ManipulasiGambar
             this.AutoScrollMinSize = new Size(Convert.ToInt32(EditGambar.CurrentBitmap.Width * zoomFactor), Convert.ToInt32(EditGambar.CurrentBitmap.Height * zoomFactor));
             this.Invalidate();
         }
-        /// <summary>
-        /// Crop Gambar
-        /// </summary>
+
         private void menuItemCrop_Click(object sender, EventArgs e)
         {
             FormCrop cpFrm = new FormCrop();
@@ -373,9 +335,7 @@ namespace ManipulasiGambar
                 this.Cursor = Cursors.Default;
             }
         }
-        /// <summary>
-        /// Insert Text
-        /// </summary>
+
         private void menuItemInsertText_Click(object sender, EventArgs e)
         {
             FormInsertText itFrm = new FormInsertText();
@@ -387,9 +347,7 @@ namespace ManipulasiGambar
                 this.Invalidate();
             }
         }
-        /// <summary>
-        /// Insert Gambar
-        /// </summary>
+
         private void menuItemInsertImage_Click(object sender, EventArgs e)
         {
             FormInsertGambar iiFrm = new FormInsertGambar();
